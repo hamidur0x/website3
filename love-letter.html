@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Handwritten Love Letter</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Caveat:wght@500&family=Pacifico&display=swap');
+
+    body {
+      background: #f5e9d3 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==');
+      font-family: 'Caveat', 'Indie Flower', cursive;
+      margin: 0;
+      padding: 40px;
+      padding-top: 100px;
+      min-height: 100vh;
+    }
+
+    .letter-container {
+      background: linear-gradient(to bottom right, #fff8ef, #fcf3e4);
+      width: 600px;
+      max-width: 90vw;
+      padding: 40px 60px;
+      box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.1),
+        0 12px 24px rgba(0, 0, 0, 0.1),
+        inset 0 0 30px rgba(214, 189, 157, 0.3);
+      border-radius: 16px;
+      border: 1px solid #dcc9b6;
+      position: relative;
+      transform: rotate(-0.5deg);
+      animation: gentleFloat 3s ease-in-out infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes gentleFloat {
+      0%,
+      100% {
+        transform: rotate(-0.5deg) translateY(0);
+      }
+      50% {
+        transform: rotate(0.5deg) translateY(-4px);
+      }
+    }
+
+    /* Enhanced notebook lines */
+    .letter-container::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      right: 20px;
+      bottom: 10px;
+      background:
+        repeating-linear-gradient(to bottom,
+          transparent,
+          transparent 35px,
+          rgba(160, 130, 100, 0.5) 36px);
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 12px;
+    }
+
+    /* Left margin line */
+    .letter-container::after {
+      content: "";
+      position: absolute;
+      left: 30px;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: rgba(160, 130, 100, 0.3);
+      border-radius: 1px;
+    }
+
+    .letter-content {
+      position: relative;
+      z-index: 1;
+      color: #543a22;
+      font-size: 1.7rem;
+      line-height: 36px; /* Matches line spacing */
+      white-space: pre-wrap;
+      text-shadow: 0 0 1px rgba(84, 58, 34, 0.2);
+      letter-spacing: 0.5px;
+      padding: 10px 0;
+    }
+
+    .letter-content br {
+      margin-bottom: 8px;
+      display: block;
+      content: "";
+    }
+
+    .letter-signature {
+      margin-top: 40px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: right;
+      color: #8d6e4b;
+      position: relative;
+      padding-right: 50px;
+    }
+
+    .letter-signature::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -10px;
+      width: 40px;
+      height: 40px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23c0392b" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+    }
+
+    .ink-blot {
+      position: absolute;
+      width: 120px;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    .ink-blot.top {
+      left: -30px;
+      top: -30px;
+      transform: rotate(15deg);
+    }
+
+    .ink-blot.bottom {
+      right: -30px;
+      bottom: -30px;
+      transform: rotate(-15deg);
+    }
+
+    @media (max-width: 480px) {
+  .letter-container {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .letter-content {
+    font-size: 1.2rem;
+    line-height: 28px;
+  }
+
+  .letter-signature {
+    font-size: 1.4rem;
+    padding-right: 30px;
+  }
+
+  .ink-blot.top,
+  .ink-blot.bottom {
+    width: 60px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="ink-blot top">✍</div>
+  <article class="letter-container" role="main" aria-label="Handwritten love letter">
+    <div class="letter-content">
+      My Love, My Strength, My Forever,
+Happy birthday, heartbeat! 🎂🌹
+Even though miles stand between us, know that my heart is right there with you today.
+Every moment apart has tested us, every challenge has tried to pull us down — but here we are, still standing,
+still fighting for each other, still choosing love over everything.
+There were days when the distance hurt so much it made me ache inside, but every time I thought of you, I found strength.
+You are not just my love — you are my home, my peace, my greatest adventure.
+On your birthday, all I want is to hold you close, whisper in your ear how proud I am of the love we've built,
+and remind you that no matter how far we are, my heart beats only for you.
+We've faced storms, but we're still here — together, unbreakable, and more in love than ever.
+
+      <span class="letter-signature">Eternally Yours,<br>Nosto</span>
+    </div>
+  </article>
+  <div class="ink-blot bottom">✍</div>
+</body>
+
+</html>
