@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love Cube Gallery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" 
         rel="stylesheet">
     <style>
         * {
@@ -21,7 +21,7 @@
             overflow-x: hidden;
         }
 
-        /* Romantic Navigation Bar */
+        /* Navigation Bar */
         .navbar {
             background: rgba(255, 255, 255, 0.95);
             padding: 1rem 3rem;
@@ -35,16 +35,18 @@
             align-items: center;
         }
 
-        .nav-brand {
-            font-family: 'Pacifico', cursive;
-            font-size: 2.5rem;
-            color: #ff0066;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 3rem;
+        .nav-brand {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.8rem;
+            color: #ff0066;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
         }
 
         .nav-link {
@@ -53,6 +55,7 @@
             text-decoration: none;
             transition: all 0.3s ease;
             position: relative;
+            white-space: nowrap;
         }
 
         .nav-link:hover {
@@ -75,7 +78,7 @@
             width: 100%;
         }
 
-        /* Enhanced Love Cube */
+        /* Love Cube Container */
         .love-scene {
             padding-top: 120px;
             height: 100vh;
@@ -90,10 +93,11 @@
             height: 400px;
             position: relative;
             transform-style: preserve-3d;
-            transition: transform 0.5s;
             margin: 2rem 0;
+            animation: cubeRotate 20s infinite linear;
         }
 
+        /* Cube Faces */
         .cube-face {
             position: absolute;
             width: 100%;
@@ -101,52 +105,27 @@
             background: rgba(255, 255, 255, 0.95);
             border: 4px solid #ffffff;
             box-shadow: 0 0 30px rgba(255, 0, 102, 0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 3rem;
-            color: #ff0066;
-            backface-visibility: visible;
-            transition: all 0.3s ease;
+            overflow: hidden;
         }
 
-        .front {
-            transform: translateZ(200px);
+        .cube-face img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
-        .back {
-            transform: rotateY(180deg) translateZ(200px);
-        }
+        /* Face Positions */
+        .front { transform: translateZ(200px); }
+        .back { transform: rotateY(180deg) translateZ(200px); }
+        .left { transform: rotateY(-90deg) translateZ(200px); }
+        .right { transform: rotateY(90deg) translateZ(200px); }
+        .top { transform: rotateX(90deg) translateZ(200px); }
+        .bottom { transform: rotateX(-90deg) translateZ(200px); }
 
-        .left {
-            transform: rotateY(-90deg) translateZ(200px);
-        }
-
-        .right {
-            transform: rotateY(90deg) translateZ(200px);
-        }
-
-        .top {
-            transform: rotateX(90deg) translateZ(200px);
-        }
-
-        .bottom {
-            transform: rotateX(-90deg) translateZ(200px);
-        }
-
-        /* Animations */
+        /* Rotation Animation */
         @keyframes cubeRotate {
-            0% {
-                transform: rotateY(0deg) rotateX(0deg);
-            }
-
-            100% {
-                transform: rotateY(360deg) rotateX(360deg);
-            }
-        }
-
-        .cube-container:hover {
-            animation: cubeRotate 15s infinite linear;
+            0% { transform: rotateY(0); }
+            100% { transform: rotateY(360deg); }
         }
 
         /* Love Message */
@@ -165,42 +144,41 @@
                 height: 300px;
             }
 
-            .front {
-                transform: translateZ(150px);
-            }
-
-            .back {
-                transform: rotateY(180deg) translateZ(150px);
-            }
-
-            .left {
-                transform: rotateY(-90deg) translateZ(150px);
-            }
-
-            .right {
-                transform: rotateY(90deg) translateZ(150px);
-            }
-
-            .top {
-                transform: rotateX(90deg) translateZ(150px);
-            }
-
-            .bottom {
-                transform: rotateX(-90deg) translateZ(150px);
-            }
+            .front { transform: translateZ(150px); }
+            .back { transform: rotateY(180deg) translateZ(150px); }
+            .left { transform: rotateY(-90deg) translateZ(150px); }
+            .right { transform: rotateY(90deg) translateZ(150px); }
+            .top { transform: rotateX(90deg) translateZ(150px); }
+            .bottom { transform: rotateX(-90deg) translateZ(150px); }
 
             .navbar {
                 padding: 1rem;
-                flex-direction: column;
             }
 
-            .nav-links {
-                margin-top: 1rem;
+            .nav-content {
                 gap: 1.5rem;
             }
 
             .nav-brand {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
+            }
+            
+            .nav-link {
+                font-size: 1.4rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .nav-brand {
+                font-size: 1.2rem;
+            }
+            
+            .nav-link {
+                font-size: 1.2rem;
+            }
+            
+            .nav-content {
+                gap: 1rem;
             }
         }
     </style>
@@ -208,47 +186,37 @@
 
 <body>
     <nav class="navbar">
-        <div class="nav-brand">💖 Love Gallery</div>
-        <div class="nav-links">
+        <div class="nav-content">
+            <div class="nav-brand">💖 Love Gallery</div>
             <a href="love-letter.html" class="nav-link">Letters</a>
         </div>
     </nav>
 
     <div class="love-scene">
         <div class="cube-container">
-            <div class="cube-face front">💞</div>
-            <div class="cube-face back">Together</div>
-            <div class="cube-face left">Always</div>
-            <div class="cube-face right">& Forever</div>
-            <div class="cube-face top">❤️</div>
-            <div class="cube-face bottom">2024</div>
+            <div class="cube-face front">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80" alt="Romantic couple">
+            </div>
+            <div class="cube-face back">
+                <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80" alt="Heart shape">
+            </div>
+            <div class="cube-face left">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80" alt="Love letters">
+            </div>
+            <div class="cube-face right">
+                <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80" alt="Kiss">
+            </div>
+            <div class="cube-face top">
+                <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80" alt="Sunset">
+            </div>
+            <div class="cube-face bottom">
+                <img src="https://images.unsplash.com/photo-1518134346374-184f9d21cea0?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&h=400&q=80" alt="Rings">
+            </div>
         </div>
         <div class="love-message">
             "Our love rotates through time,<br>
             Forever facing each other's hearts"
         </div>
     </div>
-
-    <script>
-        // Interactive mouse movement
-        document.addEventListener('mousemove', (e) => {
-            const cube = document.querySelector('.cube-container');
-            const x = (window.innerWidth / 2 - e.pageX) / 20;
-            const y = (window.innerHeight / 2 - e.pageY) / 20;
-            cube.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
-        });
-
-        // Random heart pulse
-        setInterval(() => {
-            const faces = document.querySelectorAll('.cube-face');
-            faces.forEach(face => {
-                face.style.transform += ' scale(1.05)';
-                setTimeout(() => {
-                    face.style.transform = face.style.transform.replace(' scale(1.05)', '');
-                }, 300);
-            });
-        }, 5000);
-    </script>
 </body>
-
 </html>

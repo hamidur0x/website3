@@ -9,67 +9,65 @@
     @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Caveat:wght@500&family=Pacifico&display=swap');
 
     body {
-      background: #f5e9d3 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==');
+      background: #f7f1e1 url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg==');
       font-family: 'Caveat', 'Indie Flower', cursive;
       margin: 0;
-      padding: 40px;
-      padding-top: 100px;
+      padding: 0;
       min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f7f1e1;
     }
 
     .letter-container {
-      background: linear-gradient(to bottom right, #fff8ef, #fcf3e4);
-      width: 600px;
-      max-width: 90vw;
-      padding: 40px 60px;
-      box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.1),
-        0 12px 24px rgba(0, 0, 0, 0.1),
-        inset 0 0 30px rgba(214, 189, 157, 0.3);
-      border-radius: 16px;
-      border: 1px solid #dcc9b6;
+      background: linear-gradient(to bottom right, #fff4e1, #f8e6c4);
+      width: 80%;
+      max-width: 700px;
+      padding: 50px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      border-radius: 25px;
+      border: 1px solid #d8b89b;
       position: relative;
-      transform: rotate(-0.5deg);
-      animation: gentleFloat 3s ease-in-out infinite;
+      transform: rotate(0.5deg);
+      animation: gentleFloat 4s ease-in-out infinite;
       margin: 0 auto;
+      box-sizing: border-box;
     }
 
     @keyframes gentleFloat {
-      0%,
-      100% {
-        transform: rotate(-0.5deg) translateY(0);
+      0%, 100% {
+        transform: rotate(0.5deg) translateY(0);
       }
       50% {
-        transform: rotate(0.5deg) translateY(-4px);
+        transform: rotate(-0.5deg) translateY(-6px);
       }
     }
 
-    /* Enhanced notebook lines */
     .letter-container::before {
       content: "";
       position: absolute;
-      top: 10px;
-      left: 20px;
-      right: 20px;
-      bottom: 10px;
+      top: 12px;
+      left: 25px;
+      right: 25px;
+      bottom: 12px;
       background:
         repeating-linear-gradient(to bottom,
           transparent,
-          transparent 35px,
-          rgba(160, 130, 100, 0.5) 36px);
+          transparent 40px,
+          rgba(160, 130, 100, 0.2) 41px);
       pointer-events: none;
       z-index: 0;
-      border-radius: 12px;
+      border-radius: 15px;
     }
 
-    /* Left margin line */
     .letter-container::after {
       content: "";
       position: absolute;
       left: 30px;
-      top: 10px;
-      bottom: 10px;
-      width: 2px;
+      top: 12px;
+      bottom: 12px;
+      width: 3px;
       background: rgba(160, 130, 100, 0.3);
       border-radius: 1px;
     }
@@ -77,83 +75,114 @@
     .letter-content {
       position: relative;
       z-index: 1;
-      color: #543a22;
-      font-size: 1.7rem;
-      line-height: 36px; /* Matches line spacing */
+      color: #4e352f;
+      font-size: 1.6rem;
+      line-height: 38px;
       white-space: pre-wrap;
-      text-shadow: 0 0 1px rgba(84, 58, 34, 0.2);
-      letter-spacing: 0.5px;
+      text-shadow: 0 0 1px rgba(84, 58, 34, 0.3);
+      letter-spacing: 0.6px;
       padding: 10px 0;
     }
 
-    .letter-content br {
-      margin-bottom: 8px;
-      display: block;
-      content: "";
-    }
-
     .letter-signature {
-      margin-top: 40px;
-      font-size: 1.8rem;
+      margin-top: 50px;
+      font-size: 1.9rem;
       font-weight: 700;
       text-align: right;
-      color: #8d6e4b;
+      color: #8c5a3e;
       position: relative;
-      padding-right: 50px;
+      padding-right: 60px;
+      font-family: 'Pacifico', cursive;
     }
 
     .letter-signature::after {
       content: "";
       position: absolute;
       right: 0;
-      bottom: -10px;
-      width: 40px;
-      height: 40px;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23c0392b" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+      bottom: -12px;
+      width: 45px;
+      height: 45px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23e67e22" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
     }
 
     .ink-blot {
       position: absolute;
-      width: 120px;
-      opacity: 0.15;
+      width: 130px;
+      opacity: 0.1;
       pointer-events: none;
+      user-select: none;
+      font-size: 85px;
+      color: #e67e22;
+      font-weight: bold;
+      line-height: 1;
+      font-family: serif;
     }
 
     .ink-blot.top {
-      left: -30px;
-      top: -30px;
-      transform: rotate(15deg);
+      left: -40px;
+      top: -40px;
+      transform: rotate(18deg);
     }
 
     .ink-blot.bottom {
-      right: -30px;
-      bottom: -30px;
-      transform: rotate(-15deg);
+      right: -40px;
+      bottom: -40px;
+      transform: rotate(-18deg);
     }
 
-    @media (max-width: 480px) {
-  .letter-container {
-    padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-  }
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
 
-  .letter-content {
-    font-size: 1.2rem;
-    line-height: 28px;
-  }
+      .letter-container {
+        width: 100%;
+        padding: 35px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transform: rotate(0deg);
+        animation: none;
+        border-radius: 12px;
+      }
 
-  .letter-signature {
-    font-size: 1.4rem;
-    padding-right: 30px;
-  }
+      .letter-content {
+        font-size: 1.4rem;
+        line-height: 30px;
+      }
 
-  .ink-blot.top,
-  .ink-blot.bottom {
-    width: 60px;
-  }
-}
+      .letter-signature {
+        font-size: 1.6rem;
+        padding-right: 35px;
+      }
 
+      .ink-blot.top,
+      .ink-blot.bottom {
+        width: 70px;
+        font-size: 50px;
+      }
+
+      .letter-container::before {
+        top: 10px;
+        left: 15px;
+        right: 15px;
+        bottom: 10px;
+        background:
+          repeating-linear-gradient(to bottom,
+            transparent,
+            transparent 32px,
+            rgba(160, 130, 100, 0.2) 33px);
+        border-radius: 8px;
+      }
+
+      .letter-container::after {
+        left: 25px;
+        top: 10px;
+        bottom: 10px;
+        width: 2px;
+      }
+    }
   </style>
 </head>
 
@@ -171,8 +200,8 @@ You are not just my love — you are my home, my peace, my greatest adventure.
 On your birthday, all I want is to hold you close, whisper in your ear how proud I am of the love we've built,
 and remind you that no matter how far we are, my heart beats only for you.
 We've faced storms, but we're still here — together, unbreakable, and more in love than ever.
-
-      <span class="letter-signature">Eternally Yours,<br>Nosto</span>
+   
+      <span class="letter-signature">With all my heart,<br>Nosto</span>
     </div>
   </article>
   <div class="ink-blot bottom">✍</div>
